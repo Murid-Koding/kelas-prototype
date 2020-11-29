@@ -1,0 +1,24 @@
+{
+  "name": "kelas-murid-koding",
+  "version": "1.0.0",
+  "description": "Prototype Kelas Murid Koding",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Murid-Koding/kelas-prototype.git"
+  },
+  "author": "imotD",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Murid-Koding/kelas-prototype/issues"
+  },
+  "homepage": "https://github.com/Murid-Koding/kelas-prototype#readme",
+  "dependencies": {
+    "autoprefixer": "^10.0.4",
+    "postcss": "^8.1.10",
+    "tailwindcss": "^2.0.1"
+  }
+}
