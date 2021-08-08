@@ -1,34 +1,34 @@
-Vue.component('header-component', {
-  props: ['name'],
+Vue.component("header-component", {
+  props: ["name"],
   template: `
-<header>
-  <img width="100" src="https://docs.vuejs.id/images/logo.png" alt="vue-brand">
-  <h1>Hi! <span>{{name}}</span></h1>
-  <code>Online</code>
-</header>
-<nav>
-  <a href="#" :class="{active: nav === 'add'}" @click.prevent="gantiMenu('add')">Add</a>
-  <a href="#" :class="{active: nav === 'update'}" @click.prevent="gantiMenu('update')">Update</a>
-  <a href="#" :class="{active: nav === 'remove'}" @click.prevent="gantiMenu('remove')">Remove</a>
-</nav>
+    <header>
+      <img width="50" src="https://docs.vuejs.id/images/logo.png" alt="vue-brand">
+      <h1>Hi! <span>{{name}}</span></h1>
+      <code>Online</code>
+    </header>
+    <nav>
+      <a href="#" :class="{active: nav === 'add'}" @click.prevent="gantiMenu('add')">Add</a>
+      <a href="#" :class="{active: nav === 'update'}" @click.prevent="gantiMenu('update')">Update</a>
+      <a href="#" :class="{active: nav === 'remove'}" @click.prevent="gantiMenu('remove')">Remove</a>
+    </nav>
 `,
   data() {
     return {
-      name: 'User',
-    }
+      name: "User",
+    };
   },
-})
+});
 
-Vue.component('footer-component', {
+Vue.component("footer-component", {
   template: `
   <footer>
    <slot></slot>
  </footer>
-  `
-})
+  `,
+});
 
-Vue.component('main-component', {
-  props: ['items', 'menu'],
+Vue.component("main-component", {
+  props: ["items", "menu"],
   template: `
    <div>
     <div class="img-header">
@@ -75,24 +75,23 @@ Vue.component('main-component', {
 
   data() {
     return {
-      family: ['Html', 'Css', 'Js'],
+      family: ["Html", "Css", "Js"],
       isActive: true,
-      kelasImg: 'https://scotch-res.cloudinary.com/image/upload/w_1050,q_auto:good,f_auto/v1559156220/a2dnwyg5xotyhvyhmscj.jpg',
-    }
+      kelasImg:
+        "https://scotch-res.cloudinary.com/image/upload/w_1050,q_auto:good,f_auto/v1559156220/a2dnwyg5xotyhvyhmscj.jpg",
+    };
   },
-  methods: {
-
-  },
-})
+  methods: {},
+});
 
 const Home = {
-  template: '<div>Home Page</div>'
-}
+  template: "<div>Home Page</div>",
+};
 const About = {
-  template: '<div>About Page</div>'
-}
+  template: "<div>About Page</div>",
+};
 const Kelas = {
-  props: ['items', 'menu'],
+  props: ["items", "menu"],
   template: `
    <div>
     <div class="img-header">
@@ -162,31 +161,32 @@ const Kelas = {
 
   data() {
     return {
-      family: ['Html', 'Css', 'Js'],
+      family: ["Html", "Css", "Js"],
       isActive: true,
-      kelasImg: 'https://scotch-res.cloudinary.com/image/upload/w_1050,q_auto:good,f_auto/v1559156220/a2dnwyg5xotyhvyhmscj.jpg',
+      kelasImg:
+        "https://scotch-res.cloudinary.com/image/upload/w_1050,q_auto:good,f_auto/v1559156220/a2dnwyg5xotyhvyhmscj.jpg",
       kelas: {
-        judul: '',
-        deskripsi: '',
-        gambar: '',
+        judul: "",
+        deskripsi: "",
+        gambar: "",
       },
-      previewImg: '',
+      previewImg: "",
       error: {
-        judul: '',
-        deskripsi: ''
-      }
-    }
+        judul: "",
+        deskripsi: "",
+      },
+    };
   },
   methods: {
     submitKelas() {
-      this.error.judul = ''
-      this.error.deskripsi = ''
+      this.error.judul = "";
+      this.error.deskripsi = "";
 
-      if (this.kelas.judul == '') {
-        this.error.judul = "Judul is Required"
+      if (this.kelas.judul == "") {
+        this.error.judul = "Judul is Required";
       }
-      if (this.kelas.deskripsi == '') {
-        this.error.deskripsi = "Deskripsi is Required"
+      if (this.kelas.deskripsi == "") {
+        this.error.deskripsi = "Deskripsi is Required";
       }
 
       if (this.kelas.judul && this.kelas.deskripsi) {
@@ -194,28 +194,28 @@ const Kelas = {
           id: uuidv4(),
           judul: this.kelas.judul,
           deskripsi: this.kelas.deskripsi,
-          gambar: this.kelas.gambar
-        }
-        this.$emit('submitkelas', data)
+          gambar: this.kelas.gambar,
+        };
+        this.$emit("submitkelas", data);
 
-        this.kelas.judul = ''
-        this.kelas.deskripsi = ''
-        this.kelas.gambar = ''
-        this.previewImg = ''
-        this.$refs.gambar.value = ''
+        this.kelas.judul = "";
+        this.kelas.deskripsi = "";
+        this.kelas.gambar = "";
+        this.previewImg = "";
+        this.$refs.gambar.value = "";
       }
     },
     upload(event) {
-      const namagambar = event.target.files[0].name
-      this.kelas.gambar = namagambar
-      this.previewImg = URL.createObjectURL(event.target.files[0])
-    }
+      const namagambar = event.target.files[0].name;
+      this.kelas.gambar = namagambar;
+      this.previewImg = URL.createObjectURL(event.target.files[0]);
+    },
   },
-}
+};
 
 const NotFound = {
-  template: '<div>404 Halaman Tidak Ditemukan</div>'
-}
+  template: "<div>404 Halaman Tidak Ditemukan</div>",
+};
 
 const detailKelas = {
   template: `<div>
@@ -226,18 +226,18 @@ const detailKelas = {
   </div>`,
   data() {
     return {
-      detailKelas: {}
-    }
+      detailKelas: {},
+    };
   },
   created() {
-    this.filterkelas()
+    this.filterkelas();
   },
   methods: {
     filterkelas() {
-      let kelas = JSON.parse(localStorage.getItem('kelas'))
-      let id = this.$route.params.idkelas
-      let item = kelas.filter(k => k.id == id)
-      this.detailKelas = item[0]
-    }
+      let kelas = JSON.parse(localStorage.getItem("kelas"));
+      let id = this.$route.params.idkelas;
+      let item = kelas.filter((k) => k.id == id);
+      this.detailKelas = item[0];
+    },
   },
-}
+};
